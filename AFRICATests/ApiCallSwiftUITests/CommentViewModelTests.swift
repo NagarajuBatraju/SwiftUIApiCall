@@ -2,7 +2,7 @@
 //  CommentViewModelTests.swift
 //  ApiCallSwiftUITests
 //
-//  Created by Nilesh on 06/01/22.
+//  Created by batraju.nagaraju on 12/10/23.
 //
 
 import XCTest
@@ -11,7 +11,7 @@ import XCTest
 class CommentViewModelTests: XCTestCase {
 
     func testComments() {
-        let sut = CommentViewModel(commentViewService: MockCommentViewService())
+        let sut = CommentViewModel(commentViewService: MockAnimalsViewService())
         sut.fetchComments()
         XCTAssert(sut.comments.count == 500)
     }

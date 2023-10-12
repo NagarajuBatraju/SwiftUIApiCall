@@ -2,13 +2,13 @@
 //  MockCommentViewService.swift
 //  ApiCallSwiftUITests
 //
-//  Created by Nilesh on 06/01/22.
+//  Created by batraju.nagaraju on 12/10/23.
 //
 
 import Foundation
 @testable import ApiCallSwiftUI
 
-class MockAnimalsViewService: CommentViewServiceDelegate {
+class MockAnimalsViewService: animalsViewServiceDelegate {
     func getComments(completion: @escaping (Result<[animals], NetworkError>) -> Void) {
         
         guard let jsonData = readLocalJsonFile() else {

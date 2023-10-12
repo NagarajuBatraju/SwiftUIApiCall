@@ -2,19 +2,19 @@
 //  VideoView.swift
 //  AFRICA
 //
-//  Created by batraju.nagaraju on 07/12/22.
+//  Created by batraju.nagaraju on 13/10/23.
 //
 
 import SwiftUI
 
 struct VideoView: View {
     // MARK: - PROPERTIES
-    var videoItemsList:[videoItem] = Bundle.main.decode("videos.json")
+    @ObservedObject var obs = videoListData()
     // MARK: - BODY
     var body: some View {
         NavigationView{
             List{
-                ForEach(videoItemsList) { item in
+                ForEach(obs.videoData) { item in
                     NavigationLink(destination: VideoPlayerView(videoSelected: item.id, videoTitle: item.name)){
                         VideoItemListView(videoItem: item)
                              .padding(.vertical, 12)

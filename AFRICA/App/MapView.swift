@@ -2,7 +2,7 @@
 //  MapView.swift
 //  AFRICA
 //
-//  Created by batraju.nagaraju on 07/12/22.
+//  Created by batraju.nagaraju on 12/10/23.
 //
 
 import SwiftUI
@@ -17,10 +17,13 @@ struct MapView: View {
         return region
     }()
     
-    var location:[locations] = Bundle.main.decode("locations.json")
+
+    
+    @ObservedObject var obs = locationListData()
+
     // MARK: - BODY
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: location) { item in
+        Map(coordinateRegion: $region, annotationItems: obs.locationData) { item in
             // MapAnnotation Custom
 //            MapAnnotation(coordinate:item.location){
 //                Image("logo")
